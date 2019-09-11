@@ -12,6 +12,8 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AngularMaterialModule } from './angular-material/angular-material.module';
+import { CustomersComponent } from './customers/customers.component';
+import { InvoicesComponent } from './invoices/invoices.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { AngularMaterialModule } from './angular-material/angular-material.modul
     NavbarComponent,
     SigninComponent,
     SignupComponent,
-    HomepageComponent
+    HomepageComponent,
+    CustomersComponent,
+    InvoicesComponent
   ],
   imports: [
     BrowserModule,
