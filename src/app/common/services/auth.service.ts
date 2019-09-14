@@ -43,7 +43,8 @@ export class AuthService {
    * @param user le user qui s'inscrit
    */
   signup(user: User): Observable<User> {
-    return this.http.post<User>('http://localhost:8000/api/login_check', user);
+    console.log('TCL: AuthService -> user', user);
+    return this.http.post<User>('/api/users', user);
   }
 
   /**
@@ -52,7 +53,7 @@ export class AuthService {
    */
   signin(credentials: { username: string, password: string }): Observable<string> {
     console.log('TCL: AuthService -> credentials', credentials);
-    return this.http.post<string>('http://localhost:8000/api/login_check', credentials).pipe(
+    return this.http.post<string>('/api/login_check', credentials).pipe(
       tap((token: string) => {
         console.log('dans le tap');
         this.jwtToken.next({

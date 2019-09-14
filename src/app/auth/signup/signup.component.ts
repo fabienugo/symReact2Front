@@ -22,13 +22,14 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
     this.form = this.fb.group({
       email: new FormControl(''),
-      name: new FormControl(''),
+      firstName: new FormControl(''),
+      lastName: new FormControl(''),
       password: new FormControl('')
     });
   }
 
   public submit(): void {
-    this.authService.signup(this.form.value).subscribe((user: User) => {
+    this.authService.signup(this.form.value).subscribe(() => {
       this.router.navigate(['/signin']);
     }, err => {
         this.error = err;
