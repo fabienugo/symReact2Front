@@ -3,6 +3,11 @@
     <span routerLink="/customers">Clients</span>
     <span routerLink="/invoices">Factures</span>
     <span fxFlex="auto"></span>
-    <span routerLink="/signin">Connexion</span>
-    <span routerLink="/signup">Inscription</span>
+    <span *ngIf="!jwtToken.isAuthenticated" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+        <span routerLink="/signin">Connexion</span>
+        <span routerLink="/signup">Inscription</span>
+    </span>
+    <span *ngIf="jwtToken.isAuthenticated" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+      <span (click)="logout()">Deconnexion</span>
+    </span>
 </mat-toolbar>

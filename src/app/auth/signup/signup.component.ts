@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/common/services/auth.service';
-import { User } from 'src/app/common/models/user.model';
 
 @Component({
   selector: 'app-signup',
