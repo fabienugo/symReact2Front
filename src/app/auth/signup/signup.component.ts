@@ -19,6 +19,7 @@ export class SignupComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
+    // Initialisation du formulaire d'inscription
     this.form = this.fb.group({
       email: new FormControl(''),
       firstName: new FormControl(''),
@@ -27,6 +28,9 @@ export class SignupComponent implements OnInit {
     });
   }
 
+  /**
+   * Permet à un utilisateur de s'inscrire
+   */
   public submit(): void {
     this.authService.signup(this.form.value).subscribe(() => {
       this.router.navigate(['/signin']);
