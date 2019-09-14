@@ -14,6 +14,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { AngularMaterialModule } from './angular-material/angular-material.module';
 import { CustomersComponent } from './customers/customers.component';
 import { InvoicesComponent } from './invoices/invoices.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,8 @@ import { InvoicesComponent } from './invoices/invoices.component';
     HttpClientModule,
     AngularMaterialModule,
     FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(APP_ROUTING)
   ],
   providers: [],
