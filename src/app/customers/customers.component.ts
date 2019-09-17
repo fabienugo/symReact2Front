@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-customers',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    this.getCustomers();
+  }
+
+  getCustomers() {
+    this.http.get('/api/customers').subscribe((response) => {
+      console.log('TCL: CustomersComponent -> getCustomers -> response', response);
+    });
   }
 
 }

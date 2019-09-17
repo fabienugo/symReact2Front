@@ -30,7 +30,7 @@ export class AuthService {
     if (token) {
       this.jwtToken.next({
         isAuthenticated: true,
-        token: token
+        token
       });
     } else {
       this.jwtToken.next({
@@ -57,9 +57,9 @@ export class AuthService {
       tap((token: string) => {
         this.jwtToken.next({
           isAuthenticated: true,
-          token: token
+          token
         });
-        localStorage.setItem('jwt', token); // Stock notre token de manière persistente
+        localStorage.setItem('jwt', JSON.stringify(token)); // Stock notre token de manière persistente
       })
     );
   }
