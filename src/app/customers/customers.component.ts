@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Customer } from '../common/model/customer.model';
+import { CustomerService } from '../common/services/customer.service';
 
 @Component({
   selector: 'app-customers',
@@ -8,15 +9,31 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CustomersComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  customers: Customer[];
+  invoicesNumber: number;
+
+  cols: any[];
+
+
+  constructor(
+    private customerService: CustomerService) { }
 
   ngOnInit() {
+    // Permet de faire fonctionner la recherche global
+    this.cols = [
+      { field: 'firstName', header: 'Prénom' },
+      { field: 'lastName', header: 'Nom' },
+      { field: 'email', header: 'Email' },
+      { field: 'company', header: 'Enreprise' },
+      { field: 'invoices', header: 'Factures' }
+    ];
+
     this.getCustomers();
   }
 
   getCustomers() {
-    this.http.get('/api/customers').subscribe((response) => {
-      console.log('TCL: CustomersComponent -> getCustomers -> response', response);
+    this.customerService.getCustomers().subscribe((customers: Customer[]) => {
+      this.customers = customers;
     });
   }
 

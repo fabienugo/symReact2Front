@@ -17,6 +17,7 @@ import { CustomersComponent } from './customers/customers.component';
 import { InvoicesComponent } from './invoices/invoices.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthInterceptor } from './common/services/auth-interceptor.service';
+import { PrimengModule } from './primeng/primeng.module';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { AuthInterceptor } from './common/services/auth-interceptor.service';
     BrowserAnimationsModule,
     HttpClientModule,
     AngularMaterialModule,
+    PrimengModule,
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule,

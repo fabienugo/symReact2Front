@@ -7,7 +7,13 @@ import {
   MatInputModule,
   MatFormFieldModule,
   MatCardModule,
-  MatIconModule } from '@angular/material';
+  MatIconModule,
+  MatTableModule,
+  MatBadgeModule
+} from '@angular/material';
+
+import { CdkTableModule } from '@angular/cdk/table';
+
 
 
 @NgModule({
@@ -19,7 +25,10 @@ import {
     MatInputModule,
     MatFormFieldModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    CdkTableModule,
+    MatBadgeModule
   ],
   exports: [
     MatToolbarModule,
@@ -27,7 +36,10 @@ import {
     MatInputModule,
     MatFormFieldModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    CdkTableModule,
+    MatBadgeModule
   ]
 })
 export class AngularMaterialModule { }
