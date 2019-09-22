@@ -1,0 +1,19 @@
+.custom-badge-primary {
+  @include custom-badge($blue, white);
+}
+
+.custom-badge-secondary {
+  @include custom-badge($light-grey, black);
+}
+
+.custom-badge-danger {
+  @include custom-badge($red, white);
+}
+
+.custom-badge-success {
+  @include custom-badge($green, white);
+}
+
+.custom-badge-warning {
+  @include custom-badge($orange, black);
+}

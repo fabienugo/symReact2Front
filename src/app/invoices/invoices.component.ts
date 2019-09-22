@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { InvoiceService } from '../common/services/invoice.service';
+import { Invoice } from '../common/model/invoice.model';
 
 @Component({
   selector: 'app-invoices',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InvoicesComponent implements OnInit {
 
-  constructor() { }
+  invoices: Invoice[] = [];
+
+  constructor(private invoiceService: InvoiceService) { }
 
   ngOnInit() {
+    this.getInvoices();
+  }
+
+  getInvoices() {
+    this.invoiceService.getInvoices().subscribe((invoices: Invoice[]) => {
+      this.invoices = invoices;
+    });
   }
 
 }

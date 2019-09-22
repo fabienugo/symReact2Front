@@ -10,7 +10,6 @@ import { CustomerService } from '../common/services/customer.service';
 export class CustomersComponent implements OnInit {
 
   customers: Customer[];
-  invoicesNumber: number;
 
   cols: any[];
 

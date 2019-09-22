@@ -1,0 +1,14 @@
+/**
+ * Permet de créer des badges avec un style personnalisé
+ * @param backgroundColor: the background color
+ * @param textColor: the text color
+ */
+@mixin custom-badge($backgroundColor, $textColor) {
+    background-color: $backgroundColor;
+    color: $textColor;
+    padding: 0.6em;
+    cursor: pointer;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2),
+    0 2px 2px 0 rgba(0, 0, 0, .14),
+    0 1px 5px 0 rgba(0, 0, 0, .12);
+}
