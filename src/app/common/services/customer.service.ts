@@ -16,4 +16,11 @@ export class CustomerService {
   getCustomers(): Observable<Customer[]> {
     return this.http.get<Customer[]>('/api/customers');
   }
+
+  /**
+   * Permet de modifer les données d'un utilisateur
+   */
+  editCustomer(customer: Customer, customerId: number): Observable<Customer> {
+    return this.http.put<Customer>(`/api/customers/${customerId}`, customer);
+  }
 }

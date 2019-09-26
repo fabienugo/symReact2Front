@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from '../common/model/customer.model';
 import { CustomerService } from '../common/services/customer.service';
+import { DialogService } from '../common/services/dialog.service';
 
 @Component({
   selector: 'app-customers',
@@ -15,7 +16,8 @@ export class CustomersComponent implements OnInit {
 
 
   constructor(
-    private customerService: CustomerService) { }
+    private customerService: CustomerService,
+    private dialogService: DialogService) { }
 
   ngOnInit() {
     // Permet de faire fonctionner la recherche global
@@ -30,10 +32,16 @@ export class CustomersComponent implements OnInit {
     this.getCustomers();
   }
 
+  /**
+   * Permet de récupérer la liste des clients de l'utilisateur connecté
+   */
   getCustomers() {
     this.customerService.getCustomers().subscribe((customers: Customer[]) => {
       this.customers = customers;
     });
   }
 
+  openEditCustomerDialog(customer: Customer) {
+    this.dialogService.openEditCustomerDialog(customer);
+  }
 }

@@ -1,0 +1,21 @@
+<p class="text-center mat-dialog-title">Information de {{ data.firstName }} {{ data.lastName }}</p>
+<!-- <mat-divider></mat-divider> -->
+<mat-dialog-content>
+    <form #customer [formGroup]="form" novalidate class="display-dialog-form">
+        <mat-form-field>
+            <input matInput formControlName="firstName" type="text" name="firstName" placeholder="Prénom">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput formControlName="lastName" type="text" placeholder="Nom">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput formControlName="email" type="text" placeholder="Email">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput formControlName="company" type="text" placeholder="Entreprise">
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close (click)="editCustomer(form.value, data.id)">Modifier</button>
+</mat-dialog-actions>

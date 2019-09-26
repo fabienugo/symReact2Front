@@ -9,7 +9,9 @@ import {
   MatCardModule,
   MatIconModule,
   MatTableModule,
-  MatBadgeModule
+  MatBadgeModule,
+  MatDialogModule,
+  MatDividerModule
 } from '@angular/material';
 
 import { CdkTableModule } from '@angular/cdk/table';
@@ -28,7 +30,9 @@ import { CdkTableModule } from '@angular/cdk/table';
     MatIconModule,
     MatTableModule,
     CdkTableModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatDialogModule,
+    MatDividerModule
   ],
   exports: [
     MatToolbarModule,
@@ -39,7 +43,9 @@ import { CdkTableModule } from '@angular/cdk/table';
     MatIconModule,
     MatTableModule,
     CdkTableModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatDialogModule,
+    MatDividerModule
   ]
 })
 export class AngularMaterialModule { }
