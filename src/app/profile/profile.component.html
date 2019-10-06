@@ -1,0 +1,10 @@
+<div class="my-5 py-5" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card>
+    <mat-card-title>Détails</mat-card-title>
+    <mat-card-content *ngIf="currentUser | async; let user">
+      <div>email: {{ user.email }}</div>
+      <div>firstName: {{ user.firstName }}</div>
+      <div>lastName: {{ user.lastName }}</div>
+    </mat-card-content>
+  </mat-card>
+</div>

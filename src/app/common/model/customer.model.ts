@@ -1,6 +1,6 @@
 import { Invoice } from './invoice.model';
 export interface Customer {
-    customerId: number;
+    id: number;
     firstName: string;
     lastName: string;
     email: string;

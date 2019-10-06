@@ -3,6 +3,7 @@
 </div>
 
 <div class="py-3 ml-5 mr-5">
+    <button mat-raised-button color="primary" class="mb-2" (click)="addCustomer()"><i class="pi pi-plus mr-1"></i>Ajouter un client</button>
     <p-table #dt [columns]="cols" [value]="customers" [paginator]="true" [rows]="10" class="text-center">
         <ng-template pTemplate="caption">
             <div style="text-align: right">
@@ -15,9 +16,9 @@
             <tr>
                 <th>Prénom</th>
                 <th>Nom</th>
-                <th>email</th>
-                <th>entreprise</th>
-                <th>factures</th>
+                <th>Email</th>
+                <th>Entreprise</th>
+                <th>Factures</th>
                 <th></th>
             </tr>
         </ng-template>

@@ -29,8 +29,9 @@ export class EditCustomerComponent implements OnInit {
   /**
    * Permet de persister les modifications des informations du client
    */
-  editCustomer(customer: Customer, customerId: number) {
-    this.customerService.editCustomer(customer, customerId);
+  editCustomer(customer: Customer, id: number) {
+    this.customerService.editCustomer(customer, id).subscribe((result) => {
+    });
   }
 
 }

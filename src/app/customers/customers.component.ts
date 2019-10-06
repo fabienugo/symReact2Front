@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, AfterViewChecked } from '@angular/core';
 import { Customer } from '../common/model/customer.model';
 import { CustomerService } from '../common/services/customer.service';
 import { DialogService } from '../common/services/dialog.service';
@@ -8,7 +8,7 @@ import { DialogService } from '../common/services/dialog.service';
   templateUrl: './customers.component.html',
   styleUrls: ['./customers.component.scss']
 })
-export class CustomersComponent implements OnInit {
+export class CustomersComponent implements OnInit, AfterViewChecked {
 
   customers: Customer[];
 
@@ -32,6 +32,10 @@ export class CustomersComponent implements OnInit {
     this.getCustomers();
   }
 
+  ngAfterViewChecked() {
+    this.getCustomers();
+  }
+
   /**
    * Permet de récupérer la liste des clients de l'utilisateur connecté
    */
@@ -41,7 +45,18 @@ export class CustomersComponent implements OnInit {
     });
   }
 
+  /**
+   * Permet d'appeler la fonction pour ouvrir la popup d'édition d'un client
+   * @param customer le client à modifier
+   */
   openEditCustomerDialog(customer: Customer) {
     this.dialogService.openEditCustomerDialog(customer);
+  }
+
+  /**
+   * Permet d'appeler la fonction pour ouvrir la popup d'ajout d'un client
+   */
+  addCustomer() {
+    this.dialogService.openAddCustomerDialog();
   }
 }

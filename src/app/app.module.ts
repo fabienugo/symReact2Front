@@ -18,6 +18,8 @@ import { InvoicesComponent } from './invoices/invoices.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthInterceptor } from './common/services/auth-interceptor.service';
 import { PrimengModule } from './primeng/primeng.module';
+import { EditCustomerComponent } from './customers/edit-customer/edit-customer.component';
+import { AddCustomerComponent } from './customers/add-customer/add-customer.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { PrimengModule } from './primeng/primeng.module';
     HomepageComponent,
     CustomersComponent,
     InvoicesComponent,
-    ProfileComponent
+    ProfileComponent,
+    EditCustomerComponent,
+    AddCustomerComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +50,10 @@ import { PrimengModule } from './primeng/primeng.module';
     useClass: AuthInterceptor,
     multi: true
   }],
+  entryComponents: [
+    EditCustomerComponent,
+    AddCustomerComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

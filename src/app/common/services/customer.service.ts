@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CustomerService {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   /**
    * Retourne la liste des clients de l'utilisateur connecté
@@ -19,8 +19,10 @@ export class CustomerService {
 
   /**
    * Permet de modifer les données d'un utilisateur
+   * @param customer the customer
+   * @param id the customer's id
    */
-  editCustomer(customer: Customer, customerId: number): Observable<Customer> {
-    return this.http.put<Customer>(`/api/customers/${customerId}`, customer);
+  editCustomer(customer: Customer, id: number): Observable<Customer> {
+    return this.http.put<Customer>('/api/customers/' + id, customer);
   }
 }
