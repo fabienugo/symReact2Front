@@ -27,7 +27,6 @@ export class CustomerService {
   }
 
   deleteCustomer(customerId: number): Observable<Customer> {
-    console.log('TCL: CustomerService -> constructor -> customerId', customerId);
     return this.http.delete<Customer>('/api/customers/' + customerId);
   }
 }
