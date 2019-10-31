@@ -25,4 +25,9 @@ export class CustomerService {
   editCustomer(customer: Customer, id: number): Observable<Customer> {
     return this.http.put<Customer>('/api/customers/' + id, customer);
   }
+
+  deleteCustomer(customerId: number): Observable<Customer> {
+    console.log('TCL: CustomerService -> constructor -> customerId', customerId);
+    return this.http.delete<Customer>('/api/customers/' + customerId);
+  }
 }

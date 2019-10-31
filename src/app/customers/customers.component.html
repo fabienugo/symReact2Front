@@ -41,7 +41,7 @@
                 </td>
                 <td align="center" class="min-size-cell-with-buttons">
                     <button mat-raised-button color="primary" class="mr-2" (click)="openEditCustomerDialog(rowData)"><i class="pi pi-pencil mr-1"></i>Editer</button>
-                    <button mat-raised-button color="warn"><i class="pi pi-trash mr-1"></i>Supprimer</button>
+                    <button mat-raised-button color="warn" (click)="openDeleteCustomerDialog(rowData)"><i class="pi pi-trash mr-1"></i>Supprimer</button>
                 </td>
             </tr>
         </ng-template>

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { Customer } from 'src/app/common/model/customer.model';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-customer',
@@ -14,8 +13,7 @@ export class AddCustomerComponent implements OnInit {
   public addCustomerForm: FormGroup;
 
   constructor(
-    private http: HttpClient,
-    private router: Router) { }
+    private http: HttpClient) { }
 
   ngOnInit() {
     this.addCustomerForm = new FormGroup({

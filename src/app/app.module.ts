@@ -20,6 +20,7 @@ import { AuthInterceptor } from './common/services/auth-interceptor.service';
 import { PrimengModule } from './primeng/primeng.module';
 import { EditCustomerComponent } from './customers/edit-customer/edit-customer.component';
 import { AddCustomerComponent } from './customers/add-customer/add-customer.component';
+import { DeleteCustomerComponent } from './customers/delete-customer/delete-customer.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AddCustomerComponent } from './customers/add-customer/add-customer.comp
     InvoicesComponent,
     ProfileComponent,
     EditCustomerComponent,
-    AddCustomerComponent
+    AddCustomerComponent,
+    DeleteCustomerComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,8 @@ import { AddCustomerComponent } from './customers/add-customer/add-customer.comp
   }],
   entryComponents: [
     EditCustomerComponent,
-    AddCustomerComponent
+    AddCustomerComponent,
+    DeleteCustomerComponent
   ],
   bootstrap: [AppComponent]
 })

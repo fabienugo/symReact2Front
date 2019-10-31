@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, OnChanges, AfterViewChecked, AfterViewInit } from '@angular/core';
 import { Customer } from '../common/model/customer.model';
 import { CustomerService } from '../common/services/customer.service';
 import { DialogService } from '../common/services/dialog.service';
@@ -58,5 +58,13 @@ export class CustomersComponent implements OnInit, AfterViewChecked {
    */
   addCustomer() {
     this.dialogService.openAddCustomerDialog();
+  }
+
+  /**
+   * Permet d'ouvrir la popup de suppression d'un client
+   * @param customer le client à supprimer
+   */
+  openDeleteCustomerDialog(customer: Customer) {
+    this.dialogService.openDeleteCustomerDialog(customer);
   }
 }
